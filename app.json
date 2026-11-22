@@ -1,0 +1,68 @@
+{
+  "name": "MAYU MD",
+  "description": "MAYU MD - fast multi-device WhatsApp bot with a web pairing site.",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "nodejs",
+    "mayu-md"
+  ],
+  "success_url": "/",
+  "stack": "heroku-24",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "env": {
+    "MONGODB_URI": {
+      "description": "MongoDB connection string (mongodb+srv://...). Everything is stored here.",
+      "value": "",
+      "required": true
+    },
+    "OWNER_NUMBER": {
+      "description": "Your WhatsApp number with country code, no + (e.g. 94771234567). Gets the main-owner commands.",
+      "value": "94743519654",
+      "required": true
+    },
+    "OWNER_NAME": {
+      "description": "Your name.",
+      "value": "MAYU MD",
+      "required": false
+    },
+    "BOT_NAME": {
+      "description": "Bot display name.",
+      "value": "𝐌𝐀𝐘𝐔 𝐌𝐃",
+      "required": false
+    },
+    "PUBLIC_URL": {
+      "description": "Your app's website address, e.g. https://your-app.herokuapp.com",
+      "value": "",
+      "required": false
+    },
+    "OWNER_PANEL_PASSWORD": {
+      "description": "Password for the /owner dashboard (12+ characters).",
+      "value": "",
+      "required": false
+    },
+    "PREFIX": {
+      "description": "Main command prefix.",
+      "value": ".",
+      "required": false
+    },
+    "MODE": {
+      "description": "public, private, group or inbox.",
+      "value": "public",
+      "required": false
+    },
+    "GROQ_API_KEY": {
+      "description": "Optional Groq API key for the AI commands (console.groq.com).",
+      "value": "",
+      "required": false
+    }
+  }
+}
