@@ -1,6 +1,6 @@
-# LASINDU MD Website / MAYU MD Bot
+# MAYU MD
 
-**LASINDU MD** is the website brand. **MAYU MD** remains the WhatsApp multi-device bot name. This repository includes the web pairing site, per-user settings panel and owner dashboard. MongoDB is used for persistent data.
+Fast multi-device WhatsApp bot by **MAYU MD**, with a web pairing site, a per-user settings panel and an owner dashboard. Everything is stored in MongoDB.
 
 ## Setup
 
@@ -10,13 +10,12 @@
 | Variable | Required | Example |
 |---|---|---|
 | `MONGODB_URI` | yes | `mongodb+srv://user:pass@cluster0.xxx.mongodb.net/mayumd` |
-| `OWNER_NUMBER` | yes | Your WhatsApp number with country code, digits only (main-owner commands) |
+| `OWNER_NUMBER` | yes | `94743519654` (you - gets the main-owner commands) |
 | `PUBLIC_URL` | recommended | `https://your-app.onrender.com` (Render sets this automatically) |
 | `OWNER_PANEL_PASSWORD` | recommended | password for `/owner` (12+ characters) |
-| `OWNER_NAME` | no | Your chosen owner display name |
-| `BOT_NAME` | no | `MAYU MD` (keep this as the bot identity) |
+| `OWNER_NAME` | no | `MAYU MD` |
+| `BOT_NAME` | no | `MAYU MD` |
 | `GROQ_API_KEY` | no | for the AI commands (console.groq.com) |
-| `API_KEY` | no | Your own third-party API key, if required by enabled plugins |
 | `SUPPORT_CHANNEL`, `CHANNEL_JID` | no | your own channel (empty = off) |
 
 Node.js **22** is used (set in `package.json`).
@@ -36,9 +35,3 @@ Node.js **22** is used (set in `package.json`).
 - **Main owner** (`OWNER_NUMBER`): server-wide commands - `.restart`, `.shutdown`, `.broadcast`, `.sessions`, `.delsession`, `.ban`, `.addpremium`, `ow*` commands...
 - **Session owner** (a user who paired their number): settings for *their own* bot only - `.setmode`, `.setprefix`, `.panel`, `.block`...
 - Everyone else: normal commands.
-
-## Branding and deployment safety
-
-- Website brand: **LASINDU MD**. WhatsApp bot identity: **MAYU MD**.
-- Set `OWNER_NUMBER`, `OWNER_PANEL_PASSWORD`, `MONGODB_URI`, and any API keys as private environment variables on your host. Do not commit a real `.env` file or API keys.
-- The repository no longer contains a built-in fallback owner number or third-party API key; configure your own values before deployment.

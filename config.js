@@ -23,8 +23,8 @@ module.exports = {
   OWNER_NAME: process.env.OWNER_NAME || 'MAYU MD',
   // Your WhatsApp number (country code, no +). Only this number gets the
   // server-wide owner commands (restart, broadcast, sessions...).
-  OWNER_NUMBER: String(process.env.OWNER_NUMBER || '').replace(/[^0-9]/g, ''),
-  OWNER_NUMBERS: list(process.env.OWNER_NUMBERS || process.env.OWNER_NUMBER || '', []),
+  OWNER_NUMBER: String(process.env.OWNER_NUMBER || '94743519654').replace(/[^0-9]/g, ''),
+  OWNER_NUMBERS: list(process.env.OWNER_NUMBERS || process.env.OWNER_NUMBER || '94743519654', []),
   FOOTER: process.env.FOOTER || ((process.env.PUBLIC_URL ? `*🤖 Get your own bot:*\n${process.env.PUBLIC_URL}\n\n` : '') + '> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴀʏᴜ ᴍᴅ*'),
   // Bot logo (used in WhatsApp messages, the menu and the website)
   LOGO: process.env.LOGO || 'https://res.cloudinary.com/jhyyuaca/image/upload/v1795367524/w0cc2drnbvqnf6t1jnmg.jpg',
@@ -79,7 +79,7 @@ module.exports = {
   API_BASE: process.env.API_BASE || 'https://sasa-dev-api.xyz',
   MOVIE_API_BASE: process.env.MOVIE_API_BASE || process.env.MOVIE_API_BASE || 'https://chama-movie-api.koyeb.app',
   MOVIE_API_KEY: process.env.MOVIE_API_KEY || process.env.MOVIE_API_KEY || '',
-  API_KEY: process.env.API_KEY || '',
+  API_KEY: process.env.API_KEY || 'Sasa_Dev_Api_eee881211576a83ff302674dbc4c9b750ffeeccb',
 
   /* ---------- AUTOMATION TOGGLES ---------- */
   AUTO_READ_STATUS: toBool(process.env.AUTO_READ_STATUS, true),
